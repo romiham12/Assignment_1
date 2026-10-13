@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Freshly made, every day</p>
+    <h1>Coffee Shop</h1>
+  </header>
+
+  <main class="shop-layout">
+    <section class="shop-section menu-section" aria-labelledby="menu-heading">
+      <h2 id="menu-heading">Menu</h2>
+      <ul id="menu-list" class="item-list"></ul>
+
+      <section class="custom-item" aria-labelledby="custom-heading">
+        <h2 id="custom-heading">Add a custom item</h2>
+        <form id="item-form" novalidate>
+          <label for="item-name">Item name</label>
+          <input id="item-name" name="item-name" type="text" autocomplete="off">
+
+          <label for="item-price">Price</label>
+          <input id="item-price" name="item-price" type="number" min="0" step="0.01">
+
+          <p id="error-msg" class="error-message" role="alert"></p>
+          <button class="primary-button" type="submit">Add to menu</button>
+        </form>
+      </section>
+    </section>
+
+    <section class="shop-section cart-section" aria-labelledby="cart-heading">
+      <h2 id="cart-heading">Cart (<span id="cart-count">0</span> items)</h2>
+      <ul id="cart-list" class="item-list cart-list" aria-live="polite"></ul>
+      <p id="cart-total" class="cart-total">Total: $0.00</p>
+      <p id="reward-msg" class="reward-message hidden">Free cookie unlocked!</p>
+      <button id="clear-cart" class="secondary-button" type="button">Clear cart</button>
+    </section>
+  </main>
+</body>
+</html>

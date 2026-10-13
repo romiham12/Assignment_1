@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #25231f;
+  background: #f4efe4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #25231f;
+  --muted: #716a5e;
+  --paper: #fffdf8;
+  --line: #d8d0c1;
+  --coffee: #75482e;
+  --coffee-dark: #56321f;
+  --accent: #b7d8c2;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: radial-gradient(#c5b79d 0.7px, transparent 0.7px);
+  background-size: 18px 18px;
+}
+
+.site-header {
+  padding: 2.5rem max(1.25rem, calc((100vw - 1080px) / 2));
+  color: #fffdf8;
+  background: var(--coffee-dark);
+  border-bottom: 6px solid var(--accent);
+}
+
+.eyebrow {
+  margin: 0 0 0.45rem;
+  color: #d8c9ae;
+  font: 700 0.72rem/1.2 Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 2rem;
+  width: min(1080px, calc(100% - 2.5rem));
+  margin: 2.5rem auto;
+  align-items: start;
+}
+
+.shop-section {
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--coffee);
+}
+
+.shop-section h2 {
+  margin-bottom: 1.15rem;
+  font-size: 1.55rem;
+}
+
+.item-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.25rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.item-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.item-price {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font: 0.9rem Arial, sans-serif;
+}
+
+button {
+  min-height: 2.35rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--coffee);
+  border-radius: 3px;
+  font: 700 0.9rem Arial, sans-serif;
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #3e8062;
+  outline-offset: 2px;
+}
+
+.primary-button {
+  color: #fff;
+  background: var(--coffee);
+}
+
+.primary-button:hover {
+  background: var(--coffee-dark);
+}
+
+.secondary-button,
+.quantity-button {
+  color: var(--coffee-dark);
+  background: transparent;
+}
+
+.secondary-button:hover,
+.quantity-button:hover {
+  background: #f2eadb;
+}
+
+.custom-item {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 2px solid var(--line);
+}
+
+.custom-item h2 {
+  font-size: 1.25rem;
+}
+
+#item-form {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 420px;
+}
+
+label {
+  margin-top: 0.25rem;
+  font: 700 0.88rem Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #a9a091;
+  border-radius: 2px;
+  background: #fff;
+  color: var(--ink);
+  font: 1rem Arial, sans-serif;
+}
+
+.error-message {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--danger);
+  font: 0.9rem Arial, sans-serif;
+}
+
+.cart-section {
+  position: sticky;
+  top: 1rem;
+}
+
+.cart-list {
+  margin-bottom: 1.25rem;
+}
+
+.empty-message {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.cart-entry {
+  align-items: flex-start;
+}
+
+.cart-entry-copy {
+  flex: 1;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.quantity-button {
+  width: 2.2rem;
+  min-width: 2.2rem;
+  min-height: 2.2rem;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.quantity-value {
+  min-width: 1.4rem;
+  text-align: center;
+  font: 700 0.95rem Arial, sans-serif;
+}
+
+.cart-total {
+  margin: 1.25rem 0 0.6rem;
+  font: 700 1.2rem Arial, sans-serif;
+}
+
+.reward-message {
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  color: #234a35;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding-block: 2rem;
+  }
+
+  .shop-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-block: 1rem;
+  }
+
+  .cart-section {
+    position: static;
+  }
+}
